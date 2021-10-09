@@ -20,13 +20,6 @@ export const SumaScreen = () => {
         total: 0
     }
     const [sum, setSum] = useState(initialState);
-    function operar() {
-        let total = sum.num1 + sum.num2;
-        setSum({
-            ...sum,
-            total: total
-        });
-    }
 
     return (
         <View style={{backgroundColor: '#FFFFFF', flex: 1}}>
@@ -48,12 +41,12 @@ export const SumaScreen = () => {
                 <Text style={{fontSize: 16, marginVertical: 5 ,fontWeight: 'bold'}}>Segundo número</Text>
                 <TextInput
                     style={{ height: 40, backgroundColor: '#EEEEEE', marginBottom: 20 }}
-                    placeholder="Ingrese el primer número"
+                    placeholder="Ingrese el segundo número"
                     onChangeText={
                         (text) => {
                             setSum({
                                 ...sum,
-                                num1: text
+                                num2: text
                             });
                         }
                     }
@@ -61,8 +54,13 @@ export const SumaScreen = () => {
                 <Button
                     title="Calcular sumatoria"
                     onPress={() => {
-                        operar();
-                        alert('La sumatoria de los dos números es: ' + sum.total);
+                        let reg = /^-?\d+\.?\d*$/;
+                        if(reg.test(sum.num1) && reg.test(sum.num2)){
+                            let suma = (parseFloat(sum.num1) + parseFloat(sum.num2));
+                            alert('La sumatoria de los dos números es: ' + suma);
+                        }else{
+                            alert('Solo se aceptan datos númericos');
+                        }
                     }}
                 />
             </View>
