@@ -6,18 +6,18 @@ import {
     TextInput
 } from 'react-native';
 
-export const SumaScreen = () => {
+export const RestaScreen = () => {
 
     const initialState = {
         num1: 0,
         num2: 0,
         total: 0
     }
-    const [sum, setSum] = useState(initialState);
+    const [resta, setResta] = useState(initialState);
 
     return (
         <View style={{backgroundColor: '#FFFFFF', flex: 1}}>
-            <Text style={{fontSize: 20, textAlign: 'center', marginVertical: 15 ,fontWeight: 'bold'}}>Sumatoria de dos números</Text>
+            <Text style={{fontSize: 20, textAlign: 'center', marginVertical: 15 ,fontWeight: 'bold'}}>Resta de dos números</Text>
             <View style={{padding: 15}}>
                 <Text style={{fontSize: 16, marginVertical: 5 ,fontWeight: 'bold'}}>Primer número</Text>
                 <TextInput
@@ -25,8 +25,8 @@ export const SumaScreen = () => {
                     placeholder="Ingrese el primer número"
                     onChangeText={
                         (text) => {
-                            setSum({
-                                ...sum,
+                            setResta({
+                                ...resta,
                                 num1: text
                             });
                         }
@@ -38,20 +38,20 @@ export const SumaScreen = () => {
                     placeholder="Ingrese el segundo número"
                     onChangeText={
                         (text) => {
-                            setSum({
-                                ...sum,
+                            setResta({
+                                ...resta,
                                 num2: text
                             });
                         }
                     }
                 />
                 <Button
-                    title="Calcular sumatoria"
+                    title="Calcular resta"
                     onPress={() => {
                         let reg = /^-?\d+\.?\d*$/;
-                        if(reg.test(sum.num1) && reg.test(sum.num2)){
-                            let suma = (parseFloat(sum.num1) + parseFloat(sum.num2));
-                            alert('La sumatoria de los dos números es: ' + suma);
+                        if(reg.test(resta.num1) && reg.test(resta.num2)){
+                            let valor_Resta = (parseFloat(resta.num1) - parseFloat(resta.num2));
+                            alert('La resta de los dos números es: ' + valor_Resta);
                         }else{
                             alert('Solo se aceptan datos númericos');
                         }
