@@ -38,7 +38,7 @@ export const FactorialScreen = () => {
                             if (parseInt(factorial.num1) === 0 || parseInt(factorial.num1) === 1) {
                                 // No cambia
                             } else {
-                                for (var i = parseInt(factorial.num1); i >= 1; i--) {
+                                for (let i = parseInt(factorial.num1); i >= 1; i--) {
                                     factorial_resultado *= i;
                                 }
                             }
