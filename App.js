@@ -3,14 +3,12 @@ import {
   Text,
 } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationContainer } from '@react-navigation/native';
 import { SumaScreen } from './components/SumaScreen';
 import { RestaScreen } from './components/RestaScreen';
 import { MultiScreen } from './components/MultiScreen';
 import { DivScreen } from './components/DivScreen';
 import { FactorialScreen } from './components/FactorialScreen';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createMaterialBottomTabNavigator();
 
